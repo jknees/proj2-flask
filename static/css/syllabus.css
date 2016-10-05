@@ -55,4 +55,5 @@ tr.even {
     padding-right: 2em;
     padding-left: 2em;
     column-width: 35em;
+    text-align: center;
 }
