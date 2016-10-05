@@ -41,6 +41,7 @@ def process(raw):
             if entry:
                 cooked.append(entry)
                 entry = { }
+            entry['date'] = base
             entry['topic'] = ""
             entry['project'] = ""
             entry['week'] = content
