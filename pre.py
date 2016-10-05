@@ -41,7 +41,7 @@ def process(raw):
             if entry:
                 cooked.append(entry)
                 entry = { }
-            entry['date'] = base.replace(weeks =+ int(entry['week']) - 1).format('MM/DD/YYYY')
+            entry['date'] = (base.replace(weeks =+ int(entry['week']) - 1)).format('MM/DD/YYYY')
             entry['topic'] = ""
             entry['project'] = ""
             entry['week'] = content
