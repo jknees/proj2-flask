@@ -41,7 +41,7 @@ def process(raw):
             if entry:
                 cooked.append(entry)
                 entry = { }
-            entry['date'] = base.isoformat()
+            entry['date'] = base.format('MM/DD/YYYY')
             entry['topic'] = ""
             entry['project'] = ""
             entry['week'] = content
