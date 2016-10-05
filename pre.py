@@ -41,10 +41,10 @@ def process(raw):
             if entry:
                 cooked.append(entry)
                 entry = { }
-            entry['date'] = (base.replace(weeks =+ int(entry['week']) - 1)).format('MM/DD/YYYY')
             entry['topic'] = ""
             entry['project'] = ""
             entry['week'] = content
+            entry['date'] = (base.replace(weeks =+ int(entry['week']) - 1)).format('MM/DD/YYYY')
 
         elif field == 'topic' or field == 'project':
             entry[field] = content
