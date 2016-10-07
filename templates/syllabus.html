@@ -13,7 +13,9 @@
 
 <table class="class-schedule">
   {% for entry in session.schedule %}
-  {% if loop.index is divisibleby 2 %}
+  {% if prevWeek < entry.date and entry.date < currentWeek  %}
+  <tr class='current'>
+  {% elif loop.index is divisibleby 2 %}
   <tr class="even">
   {% else %}
   <tr class="odd">

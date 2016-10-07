@@ -36,13 +36,15 @@ import CONFIG
 @app.route("/index")
 @app.route("/schedule")
 def index():
+  prevWeek = arrow.now().replace(weeks=-1).format('MM/DD/YYYY')
+  currentWeek = arrow.now().format('MM/DD/YYYY')
   app.logger.debug("Main page entry")
   if 'schedule': #not in flask.session:
       app.logger.debug("Processing raw schedule file")
       raw = open(CONFIG.schedule)
       flask.session['schedule'] = pre.process(raw)
 
-  return flask.render_template('syllabus.html')
+  return flask.render_template('syllabus.html', currentWeek=currentWeek, prevWeek=prevWeek )
 
 
 @app.errorhandler(404)
